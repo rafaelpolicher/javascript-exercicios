@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisando Data e Hora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Analisando data e hora do Sistema</h1>
+    <button onclick="info()">Iniciar Análise</button>
+    <section id="saida">
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+
+    <script>
+        function info(){
+        var data = new Date()
+        var dia = data.getDate()
+        var mes = data.getMonth()
+        var ano = data.getFullYear()
+        var diasemana = data.getDay()
+        var hora = data.getHours()
+        var minuto = data.getMinutes()
+        var segundo = data.getSeconds()
+
+switch (diasemana){
+    case 0 :
+    diasemana = 'Domingo'
+    break
+
+    case 1 :
+    diasemana = 'Segunda'
+    break
+
+    case 2 :
+    diasemana = 'Terça'
+    break
+
+    case 3 :
+    diasemana = 'Quarta'
+    break
+
+    case 4 :
+    diasemana = 'Quinta'
+    break
+
+    case 5 :
+    diasemana = 'Sexta'
+    break
+
+    case 6 :
+    diasemana = 'Sabado'
+    break
+
+}
+
+        saida.innerHTML = `Dia: ${dia}<br>
+        Mes: ${mes}<br>
+        Ano: ${ano}<br>
+        Dia da Semana: ${diasemana}<br>
+        Hora: ${hora}<br>
+        Minutos: ${minuto}<br>
+        Segundos: ${segundo}<br>
+        `
+    }
+    </script>
+</body>
+</html>

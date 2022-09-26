@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+    <script>
+        function calc(){
+            var nome = prompt("Qual é o nome do aluno?")
+            var nota1 = Number(prompt(`Qual a primeira nota de ${nome}?`))
+            var nota2 = Number(prompt(`Qual a segunda nota de ${nome}?`))
+            var media = (nota1 + nota2) / 2
+            var res = document.getElementById('res')
+
+            if (media >=7){
+                res.innerHTML = `<p>Calculando a media de ${nome}<br>
+                As notas obtidas foram ${nota1} e ${nota2}<br>
+                A media final é ${media}<br>
+                <strong>Parabens ${nome}</strong></p>`
+            } else {
+                res.innerHTML = `<p>Calculando a media de ${nome}<br>
+                As notas obtidas foram ${nota1} e ${nota2}<br>
+                A media final é ${media}<br>
+                <strong>Estude mais ${nome}</strong></p>` 
+            }
+
+            
+        }
+
+        
+
+        
+    </script>
+</head>
+<body>
+    <h1>Media do aluno</h1>
+    <button onclick="calc()">Calcular Media</button>
+    <div id="res"></div>
+</body>
+</html>

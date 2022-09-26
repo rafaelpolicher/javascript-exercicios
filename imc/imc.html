@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <style>
+      main{
+    display: flex;
+    width: 90vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    background: rgb(255,198,0);
+    width: 400px;
+    height: 600px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+  }
+  
+  .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font: bold 2.5rem serif;
+    border-bottom: solid 5px black;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input input {
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    border:none;
+    outline: 0;
+    font: bold 1.5rem serif;
+    text-align: center;
+  }
+  
+  .input label {
+    font: bold 1.5rem serif;
+  }
+  
+  button{
+    width: 300px;
+    height: 40px;
+    font: bold 1.2rem serif;
+    background: #000;
+    color: rgb(255,198,0);
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .result{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    font: italic 1.5rem serif;
+    box-shadow: 0px 0px 10px black;
+    background: #000;
+    color: rgb(255,198,0);
+    padding: 20px;
+    box-sizing: border-box;
+    user-select: none;
+  }
+    </style>
+  </head>
+  <body id="body">
+    <main>
+      <div class="container">
+        <div class="title"> Calculadora - IMC </div>
+        <div class="input">
+            <label>Nome:</label>
+            <input type="text" id='nome'>
+        </div>
+        <div class="input">
+            <label>Altura:</label>
+            <input type="number" id='altura'>
+        </div>
+        <div class="input">
+            <label>Peso:</label>
+            <input type="number" id='peso'>
+        </div>
+        <button id='calcular'>Calcular</button>
+
+        <div class="result" id='resultado'></div>
+      </div>
+    </main>
+    <script>
+      
+var calcular = document.getElementById('calcular')
+
+
+function imc(){
+    var nome = document.getElementById('nome').value
+    var altura = document.getElementById('altura').value
+    var peso = document.getElementById('peso').value
+    var resultado = document.getElementById('resultado')
+    var body = document.getElementById('body')
+
+    if(nome !=='' && altura!=='' && peso !==''){
+        var valorimc = (peso / (altura * altura)).toFixed(1)
+        //fixar apenas uma casa decimal
+   
+        var classificaçao = ''
+        if(valorimc < 18.5){
+            body.style.backgroundColor = '#F5CC00'
+            classificaçao = 'abaixo do peso.'
+        }else if (valorimc < 25){
+            body.style.backgroundColor = '#6AF54E'
+            classificaçao = 'com o peso ideal.'
+        }else if(valorimc < 30){
+            body.style.backgroundColor = '#F5CC00'
+            classificaçao = 'acima do peso.'
+        }else if(valorimc< 35){
+            body.style.backgroundColor = '#F55600'
+            classificaçao = 'com obesidade grau I.'
+        }else if(valorimc < 40){
+            body.style.backgroundColor = '#F50900'
+            classificaçao = 'com obesidade grau II.'
+        }else{
+            body.style.backgroundColor = '#000000'
+            classificaçao = 'com obesidade grau III.'
+        }
+
+
+
+        resultado.innerHTML = `${nome} seu IMC é: ${valorimc} <br>
+        Você esta ${classificaçao}`
+    } else{
+        resultado.innerHTML = 'Preencha todos os campos'
+    }
+}
+
+calcular.addEventListener('click', imc)
+//ou onclick="calcular()"
+    </script>
+  </body>
+</html>

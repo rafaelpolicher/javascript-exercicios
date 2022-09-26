@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano de nascimento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Ano de nascimento</h1>
+    <button onclick="info()">Iniciar Análise</button>
+    <section id="saida">
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+
+    <script>
+        function info(){
+            var ano = prompt('Em que ano voce nasceu?') 
+            var date = new Date()
+            var anoatual = date.getFullYear()
+            var res = anoatual - ano
+
+            saida.innerHTML = `nascido em ${ano}, em ${anoatual}, voce tem <strong>${res}</strong>`
+        }
+    </script>
+</body>
+</html>

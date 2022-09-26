@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Qual conta</h1>
+    <button onclick="info()">Iniciar Análise</button>
+    <section id="saida">
+        <p>Aqui vai aparecer algo...</p>
+    </section>
+
+    <script>
+        function info(){
+            var num1 = Number(prompt('Primeiro valor:'))
+            var conta = prompt('Escolha qual operador {*, /, +, -}')
+            var num2 = Number(prompt('Escolha outro numero'))
+
+            if (conta == "*"){
+                saida.innerHTML = `${num1} x ${num2} = ${num1*num2}`
+            } else if (conta == "/"){
+                saida.innerHTML = `${num1} / ${num2} = ${num1 / num2}`
+            }else if (conta == "-"){
+                saida.innerHTML = `${num1} - ${num2} = ${num1 - num2}`
+            }else if (conta == "+"){
+                saida.innerHTML = `${num1} + ${num2} = ${num1 + num2}`
+            }
+            }
+    </script>
+</body>
+</html>

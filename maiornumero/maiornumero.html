@@ -1,0 +1,65 @@
+
+<!--
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior numero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Qual numero é maior?</h1>
+    <button onclick="teste()">Clique para iniciar</button>
+    <section id="result">
+        <p>O resultado vai aparecer aqui...</p>
+    </section>
+    <script>
+        /*
+    ## IMPORTANTE ##
+    Você tem todo o direito de usar esse material 
+    para seu próprio aprendizado. Professores também 
+    podem ter acesso a todo o conteúdo e usá-los com 
+    seus alunos. Porém todos os que usarem esse 
+    material - seja para qual for a finalidade - deverão 
+    manter a referência ao material original, disponível 
+    em https://github.com/gustavoguanabara/javascript. Este 
+    material não poderá ser utilizado em nenhuma hipótese 
+    para ser replicada - integral ou parcialmente - 
+    por autores/editoras/instituições para criar livros 
+    ou apostilas, com finalidades de obter ganho financeiro 
+    com ele.
+*/
+
+function teste() {
+
+    var numero1 = Number(prompt("digite o primeiro numero:"))
+    var numero2 = Number(prompt("Digite o segundo numero"))
+
+    if (numero1 > numero2){
+        result.innerHTML = `o maior numero entre ${numero1} e ${numero2} é <strong>${numero1}</strong>`
+    }
+    else if (numero1 < numero2) {
+        result.innerHTML = `o maior numero entre ${numero1} e ${numero2} é <strong>${numero2}</strong>`
+    } else{
+        result.innerHTML = `os numeros ${numero1} e ${numero2} sao <strong>Iguais</strong>`
+    }
+}
+    </script>
+</body>
+</html>
