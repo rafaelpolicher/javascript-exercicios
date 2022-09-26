@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5vh;
+}
+.button {
+    width: 80px;
+}
+    </style>
+    </head>
+<body>
+    <main>
+        <div>
+            <img src="./img/desligado.png" id='img' >
+        </div>
+        <div id='buttons'>
+            <button id='red' class="button" >Vermelho</button>
+            <button id='yellow' class="button" >Amarelo</button>
+            <button id='green' class="button" >Verde</button>
+            <button name='teste' id='automatic' class="button" >Automático</button>
+        </div>
+    </main>
+
+    <script>
+        var red = document.getElementById('red')
+        var yellow = document.getElementById('yellow')
+        var green = document.getElementById('green')
+        var img = document.getElementById('img')  
+
+        function redL(){
+            img.src = './img/vermelho.png'
+        }
+
+        function yellowL(){
+            img.src = './img/amarelo.png'
+        }
+        
+        function greenL(){
+            img.src = './img/verde.png'
+        }
+
+        red.addEventListener('click', redL)
+        yellow.addEventListener('click', yellowL)
+        green.addEventListener('click', greenL)
+
+        var trafficL = (event) =>{
+            turnOn[event.target.id]()
+        }
+
+
+    </script>
+</body>
+</html>
